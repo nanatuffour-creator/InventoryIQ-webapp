@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
