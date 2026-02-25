@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy ASP.Net Core app to Azure Web App - InventoryIQ-webapp
 
 on:
@@ -12,73 +9,78 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    permissions:
-      contents: read #This is required for actions/checkout
 
     steps:
+      # Checkout repository
       - uses: actions/checkout@v4
 
-      - name: Set up .NET Core
+      # Setup .NET (match your .csproj TargetFramework)
+      - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 'dotnet10.0'
+          dotnet-version: '10.0'
 
-      -name: Set up Node.js
+      # Setup Node (required for Angular)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
       # Install Angular dependencies
       - name: Install Angular dependencies
         run: |
-          cd ClientApp
+          cd inventoryiq.client
           npm install
 
-      # Build Angular
+      # Build Angular for production
       - name: Build Angular
         run: |
-          cd ClientApp
+          cd inventoryiq.client
           npm run build -- --configuration production
-          
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+      # Restore .NET dependencies
+      - name: Restore .NET dependencies
+        run: dotnet restore
 
-      - name: Upload artifact for deployment job
+      # Publish .NET app
+      - name: Publish .NET app
+        run: dotnet publish -c Release -o publish
+
+      # Upload artifact for deployment
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          name: app
+          path: publish
 
   deploy:
     runs-on: windows-latest
     needs: build
+
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
-      - name: Download artifact from build job
+      # Download artifact
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
-      
-      - name: Login to Azure
+          name: app
+          path: publish
+
+      # Login to Azure
+      - name: Azure Login
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D956F5B1D68440E799DD5BE9F37BC163 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_251989919444438786F6A8B86474D216 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DAE2FE2235BC436E9A2B90A179F1CA02 }}
 
+      # Deploy to Azure Web App
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'InventoryIQ-webapp'
           slot-name: 'Production'
           package: publish
-
-          
-
-
