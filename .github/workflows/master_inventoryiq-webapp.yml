@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '21'
+          node-version: '21.1.5'
 
       # Install Angular dependencies
       - name: Install Angular dependencies
@@ -84,4 +84,5 @@ jobs:
           app-name: 'InventoryIQ-webapp'
           slot-name: 'Production'
           package: publish
+
 
