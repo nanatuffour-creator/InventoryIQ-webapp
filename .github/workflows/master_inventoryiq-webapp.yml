@@ -23,6 +23,22 @@ jobs:
         with:
           dotnet-version: 'dotnet10.0'
 
+      -name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      # Install Angular dependencies
+      - name: Install Angular dependencies
+        run: |
+          cd ClientApp
+          npm install
+
+      # Build Angular
+      - name: Build Angular
+        run: |
+          cd ClientApp
+          npm run build -- --configuration production
+          
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
@@ -61,7 +77,8 @@ jobs:
         with:
           app-name: 'InventoryIQ-webapp'
           slot-name: 'Production'
-          package: .
+          package: publish
 
           
+
 
