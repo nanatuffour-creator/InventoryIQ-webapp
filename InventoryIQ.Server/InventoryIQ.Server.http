@@ -1,0 +1,6 @@
+@InventoryIQ.Server_HostAddress = http://localhost:5070
+
+GET {{InventoryIQ.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
