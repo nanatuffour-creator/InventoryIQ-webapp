@@ -1,23 +1,28 @@
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top enterprise-nav">
   <div class="container">
-    <a class="navbar-brand fw-bold" routerLink="/">InventoryPro</a>
+    <a class="navbar-brand fw-bold" routerLink="/">
+      🇬🇭 SmartStock AI
+    </a>
 
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navmenu"
-    >
+      data-bs-target="#navmenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item">
-          <a class="btn btn-primary ms-3" routerLink="/login">Login</a>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="#features">Solutions</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="#about">Enterprise</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="btn btn-warning px-4" routerLink="/login">Login</a>
         </li>
       </ul>
     </div>
@@ -25,78 +30,98 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero d-flex align-items-center text-white">
+<section class="hero-ai d-flex align-items-center text-white">
   <div class="container text-center">
-    <h1 class="display-4 fw-bold">Smart Inventory Management</h1>
-    <p class="lead">Manage stock, track sales, and monitor growth easily.</p>
-    <a routerLink="/register" class="btn btn-lg btn-light mt-3">Get Started</a>
+    <h1 class="display-4 fw-bold mb-4">
+      AI-Powered Inventory Intelligence
+    </h1>
+    <p class="lead mb-4 text-light">
+      Built for Ghanaian enterprises. Smart forecasting. Real-time tracking.
+      Secure cloud infrastructure.
+    </p>
+    <div>
+      <a routerLink="/register" class="btn btn-lg btn-warning px-5 me-3 shadow">
+        Get Started
+      </a>
+      <a href="#dashboard" class="btn btn-outline-light btn-lg px-4">
+        View Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD MOCKUP -->
+<section id="dashboard" class="py-5 bg-dark text-white">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Enterprise Dashboard Preview</h2>
+
+    <div class="dashboard-mockup shadow-lg">
+      <img
+        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        class="img-fluid rounded"
+        alt="Dashboard preview"
+      />
+    </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section id="features" class="py-5">
+<section id="features" class="py-5 bg-light">
   <div class="container text-center">
-    <h2 class="mb-5">Features</h2>
+    <h2 class="fw-bold mb-5">Enterprise AI Solutions</h2>
 
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Real-Time Tracking</h5>
-            <p class="card-text">
-              Monitor your inventory levels instantly.
-            </p>
-          </div>
+        <div class="enterprise-card p-4 h-100">
+          <h5 class="fw-bold">AI Demand Forecasting</h5>
+          <p>Predict stock demand using intelligent data modeling.</p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Reports & Analytics</h5>
-            <p class="card-text">
-              Get insights into sales and stock movement.
-            </p>
-          </div>
+        <div class="enterprise-card p-4 h-100">
+          <h5 class="fw-bold">Multi-Branch Management</h5>
+          <p>Control inventory across multiple stores nationwide.</p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">User Management</h5>
-            <p class="card-text">
-              Control access and manage multiple users.
-            </p>
-          </div>
+        <div class="enterprise-card p-4 h-100">
+          <h5 class="fw-bold">Enterprise Security</h5>
+          <p>Role-based access & secure cloud storage architecture.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="bg-light py-5">
+<!-- GHANA ENTERPRISE SECTION -->
+<section id="about" class="py-5 enterprise-ghana text-white">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">
+      Designed for Ghanaian Businesses 🇬🇭
+    </h2>
+    <p class="lead">
+      Whether you're in Accra, Kumasi, or Takoradi — SmartStock AI
+      helps SMEs and enterprises scale efficiently with intelligent inventory control.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-ai text-center text-white py-5">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <img
-          src="https://via.placeholder.com/500x350"
-          class="img-fluid rounded shadow"
-        />
-      </div>
-      <div class="col-md-6">
-        <h3>About InventoryPro</h3>
-        <p>
-          InventoryPro helps businesses reduce losses, track stock efficiently,
-          and grow with confidence.
-        </p>
-      </div>
-    </div>
+    <h2 class="fw-bold mb-3">Transform Your Inventory Operations Today</h2>
+    <a routerLink="/register" class="btn btn-lg btn-warning px-5 shadow">
+      Create Enterprise Account
+    </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white text-center py-4">
-  <p class="mb-0">© 2026 InventoryPro. All rights reserved.</p>
+<footer class="bg-black text-white text-center py-4">
+  <p class="mb-1">© 2026 SmartStock AI | Enterprise Inventory Platform</p>
+  <small class="text-secondary">
+    Built with Angular • AI Powered • Ghana 🇬🇭
+  </small>
 </footer>
