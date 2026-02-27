@@ -1,8 +1,8 @@
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top enterprise-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" routerLink="/">
-      🇬🇭 SmartStock AI
+    <a class="navbar-brand fw-bold fs-4" routerLink="/">
+      InventoryIQ
     </a>
 
     <button
@@ -16,13 +16,13 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item mx-3">
-          <a class="nav-link" href="#features">Solutions</a>
+          <a class="nav-link" href="#features">Features</a>
         </li>
         <li class="nav-item mx-3">
-          <a class="nav-link" href="#about">Enterprise</a>
+          <a class="nav-link" href="#dashboard">Product</a>
         </li>
         <li class="nav-item mx-3">
-          <a class="btn btn-warning px-4" routerLink="/login">Login</a>
+          <a class="btn btn-dark px-4" routerLink="/login">Login</a>
         </li>
       </ul>
     </div>
@@ -30,37 +30,39 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero-ai d-flex align-items-center text-white">
-  <div class="container text-center">
-    <h1 class="display-4 fw-bold mb-4">
-      AI-Powered Inventory Intelligence
-    </h1>
-    <p class="lead mb-4 text-light">
-      Built for Ghanaian enterprises. Smart forecasting. Real-time tracking.
-      Secure cloud infrastructure.
-    </p>
-    <div>
-      <a routerLink="/register" class="btn btn-lg btn-warning px-5 me-3 shadow">
-        Get Started
-      </a>
-      <a href="#dashboard" class="btn btn-outline-light btn-lg px-4">
-        View Demo
-      </a>
-    </div>
-  </div>
-</section>
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center min-vh-100">
 
-<!-- DASHBOARD MOCKUP -->
-<section id="dashboard" class="py-5 bg-dark text-white">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Enterprise Dashboard Preview</h2>
+      <div class="col-lg-6">
+        <h1 class="hero-title">
+          Intelligent Inventory Management for Modern Enterprises
+        </h1>
 
-    <div class="dashboard-mockup shadow-lg">
-      <img
-        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-        class="img-fluid rounded"
-        alt="Dashboard preview"
-      />
+        <p class="hero-subtitle">
+          Gain real-time visibility, optimize stock levels, and scale your business
+          operations with powerful analytics and secure cloud infrastructure.
+        </p>
+
+        <div class="mt-4">
+          <a routerLink="/register" class="btn btn-primary btn-lg px-4 me-3">
+            Get Started
+          </a>
+
+          <a href="#dashboard" class="btn btn-outline-dark btn-lg px-4">
+            View Demo
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+          class="img-fluid hero-image"
+          alt="Dashboard preview"
+        />
+      </div>
+
     </div>
   </div>
 </section>
@@ -68,60 +70,65 @@
 <!-- FEATURES -->
 <section id="features" class="py-5 bg-light">
   <div class="container text-center">
-    <h2 class="fw-bold mb-5">Enterprise AI Solutions</h2>
+    <h2 class="section-title mb-5">Core Capabilities</h2>
 
     <div class="row g-4">
+
       <div class="col-md-4">
-        <div class="enterprise-card p-4 h-100">
-          <h5 class="fw-bold">AI Demand Forecasting</h5>
-          <p>Predict stock demand using intelligent data modeling.</p>
+        <div class="feature-box">
+          <h5>Real-Time Stock Tracking</h5>
+          <p>Monitor inventory levels across multiple branches instantly.</p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="enterprise-card p-4 h-100">
-          <h5 class="fw-bold">Multi-Branch Management</h5>
-          <p>Control inventory across multiple stores nationwide.</p>
+        <div class="feature-box">
+          <h5>Smart Forecasting</h5>
+          <p>Make informed restocking decisions with data-driven insights.</p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="enterprise-card p-4 h-100">
-          <h5 class="fw-bold">Enterprise Security</h5>
-          <p>Role-based access & secure cloud storage architecture.</p>
+        <div class="feature-box">
+          <h5>Enterprise Security</h5>
+          <p>Role-based access control and secure cloud-based architecture.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- GHANA ENTERPRISE SECTION -->
-<section id="about" class="py-5 enterprise-ghana text-white">
+<!-- DASHBOARD SECTION -->
+<section id="dashboard" class="py-5">
   <div class="container text-center">
-    <h2 class="fw-bold mb-4">
-      Designed for Ghanaian Businesses 🇬🇭
-    </h2>
-    <p class="lead">
-      Whether you're in Accra, Kumasi, or Takoradi — SmartStock AI
-      helps SMEs and enterprises scale efficiently with intelligent inventory control.
+    <h2 class="section-title mb-4">Powerful Dashboard Experience</h2>
+    <p class="mb-5 text-muted">
+      Designed for clarity, performance, and strategic decision-making.
     </p>
+
+    <img
+      src="https://images.unsplash.com/photo-1543286386-713bdd548da4"
+      class="img-fluid dashboard-image"
+      alt="Inventory dashboard"
+    />
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-ai text-center text-white py-5">
+<section class="cta-section text-white text-center">
   <div class="container">
-    <h2 class="fw-bold mb-3">Transform Your Inventory Operations Today</h2>
-    <a routerLink="/register" class="btn btn-lg btn-warning px-5 shadow">
-      Create Enterprise Account
+    <h2 class="mb-3">Ready to Transform Your Inventory Operations?</h2>
+    <a routerLink="/register" class="btn btn-light btn-lg px-5">
+      Create Account
     </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-white text-center py-4">
-  <p class="mb-1">© 2026 SmartStock AI | Enterprise Inventory Platform</p>
+<footer class="bg-dark text-white text-center py-4">
+  <p class="mb-1">© 2026 InventoryIQ</p>
   <small class="text-secondary">
-    Built with Angular • AI Powered • Ghana 🇬🇭
+    Enterprise Inventory Platform • Built with Angular
   </small>
 </footer>
