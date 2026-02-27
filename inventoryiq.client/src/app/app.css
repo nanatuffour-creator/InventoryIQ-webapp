@@ -1,4 +1,4 @@
-﻿:host {
+:host {
     max-width: 1280px;
     padding: 2rem;
     text-align: center;
@@ -11,4 +11,65 @@ th, td {
 
 table {
     margin: 0 auto;
+}
+
+/* NAVBAR */
+.enterprise-nav {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* HERO AI GRADIENT */
+.hero-ai {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* DASHBOARD MOCKUP */
+.dashboard-mockup img {
+  border: 3px solid #ffc107;
+  box-shadow: 0 0 40px rgba(255, 193, 7, 0.4);
+  border-radius: 15px;
+}
+
+/* ENTERPRISE CARDS */
+.enterprise-card {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.enterprise-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* GHANA SECTION */
+.enterprise-ghana {
+  background: linear-gradient(135deg, #006b3f, #ce1126);
+}
+
+/* CTA */
+.cta-ai {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+/* MOBILE POLISH */
+@media (max-width: 768px) {
+  .hero-ai h1 {
+    font-size: 2rem;
+  }
+
+  .hero-ai {
+    padding: 40px 20px;
+  }
+
+  .enterprise-card {
+    margin-bottom: 20px;
+  }
 }
