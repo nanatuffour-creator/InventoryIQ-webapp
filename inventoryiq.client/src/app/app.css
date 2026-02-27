@@ -1,75 +1,68 @@
-:host {
-    max-width: 1280px;
-    padding: 2rem;
-    text-align: center;
+/* HERO SECTION */
+.hero-section {
+  padding-top: 80px;
+  background: #f8f9fa;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-table {
-    margin: 0 auto;
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-top: 20px;
 }
 
-/* NAVBAR */
-.enterprise-nav {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-}
-
-/* HERO AI GRADIENT */
-.hero-ai {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* DASHBOARD MOCKUP */
-.dashboard-mockup img {
-  border: 3px solid #ffc107;
-  box-shadow: 0 0 40px rgba(255, 193, 7, 0.4);
+.hero-image {
   border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* ENTERPRISE CARDS */
-.enterprise-card {
+/* SECTION TITLES */
+.section-title {
+  font-weight: 700;
+}
+
+/* FEATURE BOX */
+.feature-box {
   background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* DASHBOARD IMAGE */
+.dashboard-image {
   border-radius: 15px;
-  transition: 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-.enterprise-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* GHANA SECTION */
-.enterprise-ghana {
-  background: linear-gradient(135deg, #006b3f, #ce1126);
-}
-
-/* CTA */
-.cta-ai {
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
+/* CTA SECTION */
+.cta-section {
+  background: #0d6efd;
+  padding: 80px 20px;
 }
 
 /* MOBILE POLISH */
 @media (max-width: 768px) {
-  .hero-ai h1 {
+  .hero-title {
     font-size: 2rem;
   }
 
-  .hero-ai {
-    padding: 40px 20px;
+  .hero-section {
+    text-align: center;
   }
 
-  .enterprise-card {
-    margin-bottom: 20px;
+  .hero-image {
+    margin-top: 40px;
   }
 }
