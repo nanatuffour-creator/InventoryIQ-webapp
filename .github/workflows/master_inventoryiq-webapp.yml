@@ -44,7 +44,7 @@ jobs:
 
       # Publish .NET app
       - name: Publish .NET app
-        run: dotnet publish InventoryIQ.Server.csproj -c Release -o publish
+        run: dotnet publish -c Release -o publish
 
       # Upload artifact for deployment
       - name: Upload artifact
@@ -84,6 +84,7 @@ jobs:
           app-name: 'InventoryIQ-webapp'
           slot-name: 'Production'
           package: publish
+
 
 
 
