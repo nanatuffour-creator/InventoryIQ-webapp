@@ -1,113 +1,102 @@
-﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">InventoryIQ</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand fw-bold" routerLink="/">InventoryPro</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navmenu"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+
+    <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item">
-          <a class="nav-link" href="#features">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#pricing">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="btn btn-primary ms-3" routerLink="/login">Login</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="bg-primary text-white text-center py-5">
-  <div class="container">
-    <h1 class="display-4 fw-bold">Smart Inventory Management</h1>
-    <p class="lead">Track, organize and optimize stock with a powerful, intuitive system.</p>
-    <a href="#" class="btn btn-light btn-lg mt-3">Get Started</a>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <div class="mb-3">
-          <i class="bi bi-graph-up" style="font-size: 3rem;"></i>
-        </div>
-        <h3>Real-time Tracking</h3>
-        <p>Monitor stock levels live from any device to avoid surprises.</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <div class="mb-3">
-          <i class="bi bi-people" style="font-size: 3rem;"></i>
-        </div>
-        <h3>User Management</h3>
-        <p>Assign roles and permissions to your team effortlessly.</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <div class="mb-3">
-          <i class="bi bi-cloud-upload" style="font-size: 3rem;"></i>
-        </div>
-        <h3>Cloud Backup</h3>
-        <p>All your data is securely backed up and accessible anytime.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing Placeholder Section -->
-<section id="pricing" class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Simple, Transparent Pricing</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <h3 class="card-title">Basic</h3>
-            <p class="card-text">Free plan for small inventories</p>
-            <h4 class="card-price">$0<span class="text-muted">/mo</span></h4>
-            <a href="#" class="btn btn-primary mt-3">Choose</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <h3 class="card-title">Standard</h3>
-            <p class="card-text">Most popular for growing businesses</p>
-            <h4 class="card-price">$29<span class="text-muted">/mo</span></h4>
-            <a href="#" class="btn btn-primary mt-3">Choose</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <h3 class="card-title">Premium</h3>
-            <p class="card-text">All features for enterprises</p>
-            <h4 class="card-price">$79<span class="text-muted">/mo</span></h4>
-            <a href="#" class="btn btn-primary mt-3">Choose</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact / CTA Section -->
-<section id="contact" class="py-5 text-center">
-  <div class="container">
-    <h2>Ready to manage smarter?</h2>
-    <p class="mb-4">Start your free trial today and take control of your inventory.</p>
-    <a href="#" class="btn btn-lg btn-primary">Sign Up Now</a>
-  </div>
-</section>
-
-<footer class="bg-dark text-white py-3">
+<!-- HERO -->
+<section class="hero d-flex align-items-center text-white">
   <div class="container text-center">
-    &copy; 2026 InventoryIQ. All rights reserved.
+    <h1 class="display-4 fw-bold">Smart Inventory Management</h1>
+    <p class="lead">Manage stock, track sales, and monitor growth easily.</p>
+    <a routerLink="/register" class="btn btn-lg btn-light mt-3">Get Started</a>
   </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-5">Features</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Real-Time Tracking</h5>
+            <p class="card-text">
+              Monitor your inventory levels instantly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Reports & Analytics</h5>
+            <p class="card-text">
+              Get insights into sales and stock movement.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">User Management</h5>
+            <p class="card-text">
+              Control access and manage multiple users.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img
+          src="https://via.placeholder.com/500x350"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+      <div class="col-md-6">
+        <h3>About InventoryPro</h3>
+        <p>
+          InventoryPro helps businesses reduce losses, track stock efficiently,
+          and grow with confidence.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-4">
+  <p class="mb-0">© 2026 InventoryPro. All rights reserved.</p>
 </footer>
