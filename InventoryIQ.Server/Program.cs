@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using InventoryIQ.Server.Data;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,10 +25,15 @@ app.UseDefaultFiles();
 app.MapStaticAssets();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+// if (app.Environment.IsDevelopment())
+// {
+//     app.MapOpenApi();
+//     app.MapScalarApiReference();
+// }
+
+//For production
+app.MapOpenApi();
+app.MapScalarApiReference();
 
 app.UseHttpsRedirection();
 
