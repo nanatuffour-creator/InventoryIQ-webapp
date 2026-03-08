@@ -13,6 +13,9 @@ public class UserService(InventoryIqContext context)
 
     public async Task<UserEntities> AddUser(UserDto userDto)
     {
+        if (userDto.Password != userDto.ConfirmPassword)
+            throw new ArgumentException("Password does not match ConfirmPassword");
+        
         var hashPassword = new PasswordHasher<UserEntities>().HashPassword(user,userDto.Password!);
         var hashConfirmPassword = new PasswordHasher<UserEntities>().HashPassword(user,userDto.ConfirmPassword!);
         var users = new UserEntities
@@ -25,12 +28,9 @@ public class UserService(InventoryIqContext context)
             Role = userDto.Role,
             CreatedAt = userDto.CreatedAt
         };
-
-        if (userDto.Password != userDto.ConfirmPassword)
-            return "Password does not match ConfirmPassword";
         
         _context.Add(users);
         await _context.SaveChangesAsync();
-        return "User Added Successfully";
+        return users;
     }
 }
