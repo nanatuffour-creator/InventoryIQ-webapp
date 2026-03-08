@@ -2,12 +2,35 @@ using System;
 using InventoryIQ.Server.Data;
 using InventoryIQ.Server.Dtos;
 using InventoryIQ.Server.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace InventoryIQ.Server.Services;
 
-public class UserService(InventoryIQContext context)
+public class UserService(InventoryIqContext context)
 {
-    private readonly InventoryIQContext _context = context;
+    private readonly InventoryIqContext _context = context;
+    private static readonly UserEntities user = new();
 
-    
+    public string AddUser(UserDto userDto)
+    {
+        var hashPassword = new PasswordHasher<UserEntities>().HashPassword(user,userDto.Password!);
+        var hashConfirmPassword = new PasswordHasher<UserEntities>().HashPassword(user,userDto.ConfirmPassword!);
+        var users = new UserEntities
+        {
+            FirstName = userDto.FirstName,
+            LastName = userDto.LastName,
+            Email = userDto.Email,
+            Password = hashPassword,
+            ConfirmPassword = hashConfirmPassword,
+            Role = userDto.Role,
+            CreatedAt = userDto.CreatedAt
+        };
+
+        if (userDto.Password != userDto.ConfirmPassword)
+            return "Password does not match ConfirmPassword";
+        
+        _context.Add(users);
+        _context.SaveChanges();
+        return "User Added Successfully";
+    }
 }

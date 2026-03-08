@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using InventoryIQ.Server.Data;
 using Scalar.AspNetCore;
+using InventoryIQ.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddDbContextPool<InventoryIqContext>((o) =>
     });
 });
 
+builder.Services.AddScoped<UserService>();
 
 var app = builder.Build();
 
