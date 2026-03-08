@@ -11,6 +11,7 @@ namespace InventoryIQ.Server.Controllers
     {
         private readonly UserService _userService = userService;
 
+        [HttpPost("register")]
         public async Task<ActionResult> CreateUser(UserDto userDto)
         {
             var result = await _userService.AddUser(userDto);
