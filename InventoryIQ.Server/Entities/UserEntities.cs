@@ -19,5 +19,5 @@ public class UserEntities
     [Required, MinLength(8)]
     public string? ConfirmPassword{get;set;}
     public Roles? Role{get;set;}
-    public DateTime CreatedAt {get;set;} = DateTime.Now;
+    public DateTime CreatedAt {get;set;} = DateTime.UtcNow;
 }
