@@ -26,7 +26,7 @@ public class UserService(InventoryIqContext context)
             Password = hashPassword,
             ConfirmPassword = hashConfirmPassword,
             Role = userDto.Role,
-            CreatedAt = DateTime.UtcNow
+            // CreatedAt = DateTime.UtcNow
         };
         
         _context.Add(users);
