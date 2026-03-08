@@ -11,7 +11,7 @@ public class UserService(InventoryIqContext context)
     private readonly InventoryIqContext _context = context;
     private static readonly UserEntities user = new();
 
-    public string AddUser(UserDto userDto)
+    public async Task<UserEntities> AddUser(UserDto userDto)
     {
         var hashPassword = new PasswordHasher<UserEntities>().HashPassword(user,userDto.Password!);
         var hashConfirmPassword = new PasswordHasher<UserEntities>().HashPassword(user,userDto.ConfirmPassword!);
@@ -30,7 +30,7 @@ public class UserService(InventoryIqContext context)
             return "Password does not match ConfirmPassword";
         
         _context.Add(users);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
         return "User Added Successfully";
     }
 }

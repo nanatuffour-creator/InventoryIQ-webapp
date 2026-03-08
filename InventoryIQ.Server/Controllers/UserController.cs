@@ -13,7 +13,7 @@ namespace InventoryIQ.Server.Controllers
 
         public async Task<ActionResult> CreateUser(UserDto userDto)
         {
-            var result = _userService.AddUser(userDto);
+            var result = await _userService.AddUser(userDto);
             return Ok(result);
         }
     }
